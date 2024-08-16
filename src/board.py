@@ -17,8 +17,8 @@ class Board :
 		final = move.final
 
 		# console board move update
-		self.squares[initial.row][initial.col] = None
-		self.squares[final.row][final.col] = piece
+		self.squares[initial.row][initial.col].piece = None
+		self.squares[final.row][final.col].piece = piece
 
 		# move
 		piece.moved = True
@@ -113,7 +113,7 @@ class Board :
 				possible_move_col = col + col_incr
 
 				while True :
-					if Square.in_range(possible_move_col, possible_move_col) :
+					if Square.in_range(possible_move_row, possible_move_col) :
 						# create squares of the possible new move
 						initial = Square(row, col)
 						final = Square(possible_move_row, possible_move_col)

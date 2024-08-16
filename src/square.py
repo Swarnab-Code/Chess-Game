@@ -27,7 +27,7 @@ class Square :
 	@staticmethod
 	def in_range(*args) :
 		for arg in args :
-			if arg < 0 or arg >= ROWS :
+			if arg < 0 or arg > 7 :
 				return False
 			
 		return True
