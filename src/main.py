@@ -48,7 +48,7 @@ class Main :
 						piece = board.squares[clicked_row][clicked_col].piece
 						# valid piece (color) ?
 						if piece.color == game.next_player :
-							board.calc_moves(piece, clicked_row, clicked_col)
+							board.calc_moves(piece, clicked_row, clicked_col, bool=True)
 							dragger.save_initial(event.pos)
 							dragger.drag_piece(piece)
 							# show methods
@@ -127,4 +127,3 @@ class Main :
 
 main = Main()
 main.mainloop()
-
